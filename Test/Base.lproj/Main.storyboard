@@ -90,6 +90,21 @@
             </objects>
             <point key="canvasLocation" x="2836" y="-35"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="A3P-G0-gtH">
+            <objects>
+                <viewController id="efO-nc-ZhQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LfH-FZ-SFt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1Vr-wa-KUo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iri-6s-GXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3809" y="-35"/>
+        </scene>
         <!--CalculatorView-->
         <scene sceneID="cZh-AK-yhu">
             <objects>
