@@ -416,10 +416,10 @@
             </objects>
             <point key="canvasLocation" x="1018.840579710145" y="648.88392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Item1 View Controller-->
         <scene sceneID="3EF-PJ-SRf">
             <objects>
-                <viewController id="vtF-Wr-hTL" sceneMemberID="viewController">
+                <viewController id="vtF-Wr-hTL" customClass="Item1ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BUe-xp-9fJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

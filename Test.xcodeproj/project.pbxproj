@@ -16,6 +16,7 @@
 		3441FCFD26B5911600FF7B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441FCFB26B5911600FF7B06 /* LaunchScreen.storyboard */; };
 		3441FD0826B5911600FF7B06 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD0726B5911600FF7B06 /* TestTests.swift */; };
 		3441FD1326B5911600FF7B06 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD1226B5911600FF7B06 /* TestUITests.swift */; };
+		3471FCF426BC3C6F006FF4CE /* Item1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471FCF326BC3C6F006FF4CE /* Item1ViewController.swift */; };
 		3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3441FD0E26B5911600FF7B06 /* TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3441FD1226B5911600FF7B06 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		3441FD1426B5911600FF7B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3471FCF326BC3C6F006FF4CE /* Item1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item1ViewController.swift; sourceTree = "<group>"; };
 		3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		3441FCEF26B5911500FF7B06 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3471FCF226BC3C2D006FF4CE /* TabBarController */,
 				3494ED7026B9327B00CAE5C6 /* NavigationBar */,
 				3441FCF026B5911500FF7B06 /* AppDelegate.swift */,
 				3441FCF226B5911500FF7B06 /* SceneDelegate.swift */,
@@ -132,6 +135,14 @@
 				3441FD1426B5911600FF7B06 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		3471FCF226BC3C2D006FF4CE /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				3471FCF326BC3C6F006FF4CE /* Item1ViewController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		3494ED7026B9327B00CAE5C6 /* NavigationBar */ = {
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */,
+				3471FCF426BC3C6F006FF4CE /* Item1ViewController.swift in Sources */,
 				3441FCF526B5911500FF7B06 /* ViewController.swift in Sources */,
 				34192B9226BA74F20033E50F /* Navigation.swift in Sources */,
 				3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */,
