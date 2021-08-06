@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController{
     @IBOutlet weak var PriceText: UITextField!
     @IBOutlet weak var Discount: UITextField!
+    @IBOutlet var switchdark: UISwitch!
     @IBOutlet weak var Final: UILabel!
     override func viewDidLoad() {
        // view.backgroundColor = .cyan
@@ -35,6 +36,14 @@ class ViewController: UIViewController{
         let finalprice = mrp - (mrp * dis/100.00)
         Final.text = "Rs\(finalprice)"
         
+    }
+    @IBAction func switchchange(_ sender: UISwitch){
+        if sender.isOn{
+            view.backgroundColor = .darkGray
+        }
+        else{
+            view.backgroundColor = .white
+        }
     }
     
 }

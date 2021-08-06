@@ -105,7 +105,7 @@ class CalculatorVC: UIViewController {
     }
     @IBAction func equals(_ sender: Any) {
         if expression.text=="+" {
-            
+            expression.text = "="
         let myDouble1=atof(result)
         let myDouble2=atof(firstinp)
         let answer=myDouble2+myDouble1
@@ -116,7 +116,7 @@ class CalculatorVC: UIViewController {
             
         }
         else if expression.text=="-"{
-            
+            expression.text = "="
             let myDouble1=atof(result)
             let myDouble2=atof(firstinp)
             let answer=myDouble2-myDouble1
@@ -125,7 +125,7 @@ class CalculatorVC: UIViewController {
                 output.text="\(c)"
         }
         else if expression.text=="x"{
-            
+            expression.text = "="
             let myDouble1=atof(result)
             let myDouble2=atof(firstinp)
             let answer=myDouble2*myDouble1
@@ -134,7 +134,7 @@ class CalculatorVC: UIViewController {
                 output.text="\(c)"
         }
         else if expression.text=="/"{
-            
+            expression.text = "="
             let myDouble1=atof(result)
             let myDouble2=atof(firstinp)
             let answer=myDouble2/myDouble1
