@@ -13,21 +13,26 @@ class ViewController: UIViewController{
     @IBOutlet weak var Discount: UITextField!
     @IBOutlet var switchdark: UISwitch!
     @IBOutlet weak var Final: UILabel!
+    @IBOutlet weak var Button: UIButton!
+    @IBOutlet weak var Heading: UILabel!
     override func viewDidLoad() {
        // view.backgroundColor = .cyan
+        super.viewDidLoad()
+        configuretxtfield()
+        configuretapgesture()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    override func  viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     
+    private func configuretxtfield(){
+        PriceText.delegate = self
+        Discount.delegate = self
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    private func configuretapgesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(taphandler))
+        view.addGestureRecognizer(tap)
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    @objc func taphandler(){
+        print("Tap is registered")
+        view.endEditing(true)
     }
     
     @IBAction func Calculate(_ sender: Any) {
@@ -35,17 +40,31 @@ class ViewController: UIViewController{
         let dis = Double(Discount.text!)!
         let finalprice = mrp - (mrp * dis/100.00)
         Final.text = "Rs\(finalprice)"
+        view.endEditing(true)
         
     }
     @IBAction func switchchange(_ sender: UISwitch){
         if sender.isOn{
             view.backgroundColor = .darkGray
+            Button.backgroundColor = .brown
+            Heading.textColor = .white
+            
+            
         }
         else{
             view.backgroundColor = .white
+            Button.backgroundColor = .orange
+            Heading.textColor = .black
         }
     }
     
+    
+}
+extension ViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 
