@@ -15,6 +15,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var Final: UILabel!
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var Heading: UILabel!
+    @IBOutlet weak var Button2: UIButton!
     override func viewDidLoad() {
        // view.backgroundColor = .cyan
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class ViewController: UIViewController{
         if sender.isOn{
             view.backgroundColor = .darkGray
             Button.backgroundColor = .brown
+            Button2.backgroundColor = .lightGray
             Heading.textColor = .white
             
             
@@ -54,6 +56,7 @@ class ViewController: UIViewController{
         else{
             view.backgroundColor = .white
             Button.backgroundColor = .orange
+            Button2.backgroundColor = .gray
             Heading.textColor = .black
         }
     }
