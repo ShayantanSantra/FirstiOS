@@ -17,6 +17,7 @@
 		3441FCFD26B5911600FF7B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441FCFB26B5911600FF7B06 /* LaunchScreen.storyboard */; };
 		3441FD0826B5911600FF7B06 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD0726B5911600FF7B06 /* TestTests.swift */; };
 		3441FD1326B5911600FF7B06 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD1226B5911600FF7B06 /* TestUITests.swift */; };
+		345F561F26C40EE000F4CA2D /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F561E26C40EE000F4CA2D /* HeaderCollectionReusableView.swift */; };
 		3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */; };
 		34C31D5726C1094800FBA003 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C31D5626C1094800FBA003 /* PickerView.swift */; };
 		34C31D5B26C1B64200FBA003 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C31D5A26C1B64200FBA003 /* TableView.swift */; };
@@ -61,6 +62,7 @@
 		3441FD0E26B5911600FF7B06 /* TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3441FD1226B5911600FF7B06 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		3441FD1426B5911600FF7B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345F561E26C40EE000F4CA2D /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		34C31D5626C1094800FBA003 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		34C31D5A26C1B64200FBA003 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				34F5A8B826C2CD010057C6D0 /* CollectionView.swift */,
 				34F5A8BA26C2D24E0057C6D0 /* MyCollectionViewCell.swift */,
 				34F5A8BB26C2D24E0057C6D0 /* MyCollectionViewCell.xib */,
+				345F561E26C40EE000F4CA2D /* HeaderCollectionReusableView.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */,
 				3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */,
 				3441FCF526B5911500FF7B06 /* ViewController.swift in Sources */,
+				345F561F26C40EE000F4CA2D /* HeaderCollectionReusableView.swift in Sources */,
 				34192B9226BA74F20033E50F /* Navigation.swift in Sources */,
 				34C31D5E26C1BC7900FBA003 /* CustomCell.swift in Sources */,
 				3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */,
