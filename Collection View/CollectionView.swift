@@ -37,7 +37,7 @@ class CollectionView: UIViewController {
 extension CollectionView :UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("It works")
+        print("It works, button tapped")
     }
 }
 extension CollectionView :UICollectionViewDataSource{
