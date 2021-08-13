@@ -35,6 +35,8 @@ class ViewController: UIViewController{
         swipe.numberOfTouchesRequired = 1
         view.addGestureRecognizer(swipe)
         view.isUserInteractionEnabled = true
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler))
+        view.addGestureRecognizer(longPress)
     }
     @objc func taphandler(){
         print("Tap is registered")
@@ -50,6 +52,9 @@ class ViewController: UIViewController{
         let nextview = storyboard.instantiateViewController(withIdentifier: "calci") as! CalculatorVC
         nextview.modalPresentationStyle = .automatic
         self.present(nextview, animated: true, completion: nil)
+    }
+    @objc func longPressHandler(){
+        print("Long pressed")
     }
     
     @IBAction func Calculate(_ sender: Any) {
