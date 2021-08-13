@@ -30,10 +30,26 @@ class ViewController: UIViewController{
     private func configuretapgesture(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(taphandler))
         view.addGestureRecognizer(tap)
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipehandler))
+        swipe.direction = .up
+        swipe.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(swipe)
+        view.isUserInteractionEnabled = true
     }
     @objc func taphandler(){
         print("Tap is registered")
+        //self.navigationController?.popToViewController(viewcontrollers[1], animated: true)
+        /*let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextview = storyboard.instantiateViewController(withIdentifier: "CollectionView") as! CollectionView
+        self.present(nextview, animated: true, completion: nil)*/
         view.endEditing(true)
+    }
+    @objc func swipehandler(){
+        print("Swiped")
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextview = storyboard.instantiateViewController(withIdentifier: "calci") as! CalculatorVC
+        nextview.modalPresentationStyle = .automatic
+        self.present(nextview, animated: true, completion: nil)
     }
     
     @IBAction func Calculate(_ sender: Any) {
