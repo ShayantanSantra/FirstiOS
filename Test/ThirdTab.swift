@@ -25,6 +25,7 @@ class ThirdTab: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Imageview.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         Imageview.image = #imageLiteral(resourceName: "Random_image")
         Imageview.isUserInteractionEnabled = true
@@ -34,7 +35,6 @@ class ThirdTab: UIViewController {
         Imageview.addGestureRecognizer(pinchgesture)
         Imageview.addGestureRecognizer(rotationgesture)
         pinchgesture.addTarget(self, action: #selector(pinchaction))
-        
         
         //navigationItem.leftBarButtonItems = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(goback))
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goback))
@@ -46,6 +46,8 @@ class ThirdTab: UIViewController {
     }*/
         rotationgesture.addTarget(self, action: #selector(Rotation))
     }
+    
+   
     @objc private func Rotation() {
         guard let gestureview = rotationgesture.view else{
             return

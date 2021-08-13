@@ -34,9 +34,13 @@ class ViewController: UIViewController{
         swipe.direction = .up
         swipe.numberOfTouchesRequired = 1
         view.addGestureRecognizer(swipe)
-        view.isUserInteractionEnabled = true
+        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler))
         view.addGestureRecognizer(longPress)
+        let screenedge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgehandler))
+        screenedge.edges = .right
+        view.addGestureRecognizer(screenedge)
+        view.isUserInteractionEnabled = true
     }
     @objc func taphandler(){
         print("Tap is registered")
@@ -45,6 +49,13 @@ class ViewController: UIViewController{
         let nextview = storyboard.instantiateViewController(withIdentifier: "CollectionView") as! CollectionView
         self.present(nextview, animated: true, completion: nil)*/
         view.endEditing(true)
+    }
+    @objc private func edgehandler(){
+        print("edge clicked")
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextview = storyboard.instantiateViewController(withIdentifier: "Table") as! TableView
+        nextview.modalPresentationStyle = .automatic
+        self.present(nextview, animated: true, completion: nil)
     }
     @objc func swipehandler(){
         print("Swiped")
