@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +463,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aN8-6P-pN9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="AI0-OS-j0O"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="circle.grid.3x3" catalog="system" selectedImage="circle.grid.3x3.fill" id="AI0-OS-j0O"/>
                     <connections>
                         <outlet property="expression" destination="deY-6X-O8u" id="dZJ-Ny-F68"/>
                         <outlet property="input" destination="k5h-TT-wsZ" id="Q5O-Ch-de7"/>
@@ -598,7 +598,7 @@
         <!--Collection View-->
         <scene sceneID="Why-KM-laK">
             <objects>
-                <viewController id="rD7-j0-9dA" customClass="CollectionView" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionView" id="rD7-j0-9dA" customClass="CollectionView" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBd-fB-3dt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -662,11 +662,11 @@
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="-35.491071428571423"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="iRi-CK-UGx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dep-KP-pGT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="magnifyingglass" catalog="system" systemItem="mostViewed" id="KF1-Wc-LZV"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="pencil.circle" catalog="system" selectedImage="pencil.circle" id="KF1-Wc-LZV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lJm-rY-Bgj">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -703,7 +703,9 @@
     </scenes>
     <resources>
         <image name="Random_image" width="1200" height="1200"/>
+        <image name="circle.grid.3x3" catalog="system" width="128" height="110"/>
+        <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="delete.right.fill" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

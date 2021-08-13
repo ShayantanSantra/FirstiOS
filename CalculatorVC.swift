@@ -15,15 +15,34 @@ class CalculatorVC: UIViewController {
     var result=""
     var firstinp=""
     var answer:Double=0.00
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLoad()
+        //configuretapgesture()
+    }
     func clear(){
         result = ""
         input.text=""
         output.text=""
         expression.text=""
-        
+      
         
     }
+    /*private func configuretapgesture(){
+      
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipehandler))
+        swipe.direction = .down
+        swipe.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(swipe)
+        view.isUserInteractionEnabled = true
+    }
+      
+      @objc func swipehandler(){
+          print("Swiped")
+          let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+          let nextview = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+          nextview.modalPresentationStyle = .fullScreen
+          self.present(nextview, animated: true, completion: nil)
+      }*/
     func inp(data: String){
         result=result+data
         input.text=result
