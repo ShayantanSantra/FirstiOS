@@ -565,12 +565,6 @@
                     <view key="view" contentMode="scaleToFill" id="BUe-xp-9fJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Random_image" translatesAutoresizingMaskIntoConstraints="NO" id="63k-XO-6TN">
-                                <rect key="frame" x="67" y="399" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="NjT-W1-Ure"/>
                     </view>
@@ -702,7 +696,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Random_image" width="1200" height="1200"/>
         <image name="circle.grid.3x3" catalog="system" width="128" height="110"/>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="delete.right.fill" catalog="system" width="128" height="104"/>
