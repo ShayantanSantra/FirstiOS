@@ -10,8 +10,17 @@ import UIKit
 
 class ThirdTab: UIViewController {
     @IBOutlet var switch1: UISwitch!
+    @IBOutlet var Imageview: UIImageView!
     
-    let Imageview = UIImageView()
+    @IBAction func PanAction(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began || sender.state == .changed {
+            let translation = sender.translation(in: sender.view)
+            let changeX = (sender.view?.center.x)! + translation.x
+            let changeY = (sender.view?.center.y)! + translation.y
+            sender.view?.center = CGPoint(x: changeX, y: changeY)
+            sender.setTranslation(CGPoint.zero, in: sender.view)
+        }
+    }
     let pinchgesture = UIPinchGestureRecognizer()
     
     
@@ -20,7 +29,7 @@ class ThirdTab: UIViewController {
         Imageview.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         Imageview.image = #imageLiteral(resourceName: "Random_image")
         Imageview.isUserInteractionEnabled = true
-        self.view.addSubview(Imageview)
+        //self.view.addSubview(Imageview)
         Imageview.center = view.center
         
         Imageview.addGestureRecognizer(pinchgesture)
