@@ -549,7 +549,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aJb-vB-qCu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hCA-7p-ZYU"/>
+                    <navigationItem key="navigationItem" id="hCA-7p-ZYU">
+                        <barButtonItem key="rightBarButtonItem" image="plus.app.fill" catalog="system" id="bG5-3R-jbk">
+                            <connections>
+                                <action selector="AddData:" destination="qcg-Jd-LVy" id="IB0-qC-m1F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Table" destination="gYW-xs-lXP" id="xnG-uI-2Om"/>
                     </connections>
@@ -716,5 +722,6 @@
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="delete.right.fill" catalog="system" width="128" height="104"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

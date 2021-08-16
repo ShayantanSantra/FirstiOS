@@ -18,6 +18,9 @@
 		3441FD0826B5911600FF7B06 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD0726B5911600FF7B06 /* TestTests.swift */; };
 		3441FD1326B5911600FF7B06 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FD1226B5911600FF7B06 /* TestUITests.swift */; };
 		345F561F26C40EE000F4CA2D /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F561E26C40EE000F4CA2D /* HeaderCollectionReusableView.swift */; };
+		346681E426CA932D00C3A4A1 /* TestDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 346681E226CA932D00C3A4A1 /* TestDataModel.xcdatamodeld */; };
+		3466822B26CABA9900C3A4A1 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346681EB26CAAA3400C3A4A1 /* Person+CoreDataClass.swift */; };
+		3466822C26CABA9900C3A4A1 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346681EA26CAAA2F00C3A4A1 /* Person+CoreDataProperties.swift */; };
 		3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */; };
 		34C31D5726C1094800FBA003 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C31D5626C1094800FBA003 /* PickerView.swift */; };
 		34C31D5B26C1B64200FBA003 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C31D5A26C1B64200FBA003 /* TableView.swift */; };
@@ -63,6 +66,9 @@
 		3441FD1226B5911600FF7B06 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		3441FD1426B5911600FF7B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345F561E26C40EE000F4CA2D /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		346681E326CA932D00C3A4A1 /* TestDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestDataModel.xcdatamodel; sourceTree = "<group>"; };
+		346681EA26CAAA2F00C3A4A1 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		346681EB26CAAA3400C3A4A1 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		34C31D5626C1094800FBA003 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		34C31D5A26C1B64200FBA003 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -121,11 +127,13 @@
 		3441FCEF26B5911500FF7B06 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				346681E926CAAA2000C3A4A1 /* Database */,
 				34C31D6026C254DD00FBA003 /* Collection View */,
 				34C31D5926C1B4E900FBA003 /* TableView */,
 				3471FCF226BC3C2D006FF4CE /* PickerView */,
 				3494ED7026B9327B00CAE5C6 /* NavigationBar */,
 				3441FCF026B5911500FF7B06 /* AppDelegate.swift */,
+				346681E226CA932D00C3A4A1 /* TestDataModel.xcdatamodeld */,
 				3441FCF226B5911500FF7B06 /* SceneDelegate.swift */,
 				3441FCF426B5911500FF7B06 /* ViewController.swift */,
 				3441FCF626B5911500FF7B06 /* Main.storyboard */,
@@ -156,6 +164,13 @@
 			path = TestUITests;
 			sourceTree = "<group>";
 		};
+		346681E926CAAA2000C3A4A1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		3471FCF226BC3C2D006FF4CE /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,8 @@
 		34C31D5926C1B4E900FBA003 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				346681EB26CAAA3400C3A4A1 /* Person+CoreDataClass.swift */,
+				346681EA26CAAA2F00C3A4A1 /* Person+CoreDataProperties.swift */,
 				34C31D5A26C1B64200FBA003 /* TableView.swift */,
 				34C31D5C26C1BC7900FBA003 /* CustomCell.swift */,
 				34C31D5D26C1BC7900FBA003 /* CustomCell.xib */,
@@ -332,9 +349,12 @@
 				3441FCF526B5911500FF7B06 /* ViewController.swift in Sources */,
 				345F561F26C40EE000F4CA2D /* HeaderCollectionReusableView.swift in Sources */,
 				34192B9226BA74F20033E50F /* Navigation.swift in Sources */,
+				346681E426CA932D00C3A4A1 /* TestDataModel.xcdatamodeld in Sources */,
 				34C31D5E26C1BC7900FBA003 /* CustomCell.swift in Sources */,
+				3466822B26CABA9900C3A4A1 /* Person+CoreDataClass.swift in Sources */,
 				3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */,
 				34F5A8B926C2CD010057C6D0 /* CollectionView.swift in Sources */,
+				3466822C26CABA9900C3A4A1 /* Person+CoreDataProperties.swift in Sources */,
 				34C31D5B26C1B64200FBA003 /* TableView.swift in Sources */,
 				34C31D5726C1094800FBA003 /* PickerView.swift in Sources */,
 				3441FCF326B5911500FF7B06 /* SceneDelegate.swift in Sources */,
@@ -660,6 +680,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		346681E226CA932D00C3A4A1 /* TestDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				346681E326CA932D00C3A4A1 /* TestDataModel.xcdatamodel */,
+			);
+			currentVersion = 346681E326CA932D00C3A4A1 /* TestDataModel.xcdatamodel */;
+			path = TestDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3441FCE526B5911500FF7B06 /* Project object */;
 }
