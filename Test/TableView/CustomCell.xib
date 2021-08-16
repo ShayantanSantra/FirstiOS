@@ -23,8 +23,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="or4-BA-czB">
-                        <rect key="frame" x="259" y="5" width="81" height="78"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="or4-BA-czB">
+                        <rect key="frame" x="259" y="7.5" width="81" height="73.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -46,4 +46,7 @@
             <point key="canvasLocation" x="155.79710144927537" y="125.89285714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
