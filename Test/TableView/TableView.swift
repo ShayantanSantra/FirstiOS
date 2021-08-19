@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TableView: UIViewController {
     @IBOutlet var Table : UITableView!
+    @IBOutlet var Searchbar : UISearchBar!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     //let contents = ["avbekjb","bfbaf","cffea","deh","ewtrhw","fwgrn","gwngr","hwngr"]
     var items:[Person]?
-
+   // var searchname = [String]
+    //var NameArray = [String]()
     override func viewDidLoad() {
+        print(items ?? "")
         super.viewDidLoad()
+        //configuretap()
         let nib = UINib(nibName: "CustomCell", bundle: nil)
         Table.register(nib, forCellReuseIdentifier: "CustomCell")
         Table.delegate = self
@@ -24,7 +29,11 @@ class TableView: UIViewController {
         // Do any additional setup after loading the view.
     }
     func fetchdata(){
+        //print(NameArray)
+       // var name=[Person]()
+        
         do{
+            //self.NameArray.append(a)
             self.items = try context.fetch(Person.fetchRequest())
             DispatchQueue.main.async {
                 self.Table.reloadData()
@@ -36,6 +45,7 @@ class TableView: UIViewController {
         }
     }
     
+    
     @IBAction func AddData(_ sender: Any) {
         let alert = UIAlertController(title: "Add name", message: "Enter a name", preferredStyle: .alert)
         alert.addTextField()
@@ -44,11 +54,12 @@ class TableView: UIViewController {
             let txtfield = alert.textFields![0]
             let newPerson = Person(context: self.context)
             newPerson.name = txtfield.text
-            newPerson.age = 20
-            newPerson.gender = "male"
-            
+            newPerson.age = 19
+            newPerson.gender = "Male"
+           //
             do{
                 try self.context.save()
+                //print(self.items ?? 0)
             }
             catch{
                 print("error")
@@ -62,7 +73,7 @@ class TableView: UIViewController {
     
     
 }
-extension TableView : UITableViewDelegate, UITableViewDataSource{
+extension TableView : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return contents.count
         return self.items?.count ?? 0
@@ -72,8 +83,9 @@ extension TableView : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell",
                                                  for: indexPath) as! CustomCell
         let person = self.items![indexPath.row]
-        cell.textLabel?.text = person.name
-       // cell.myimg.backgroundColor = .red
+        cell.label.text = person.name
+        //cell.Label2.text = person.gender
+       // cell.myimg.backgroundColor = .red	
         //cell.textLabel?.text = contents[indexPath.row]
         return cell
     }
@@ -85,6 +97,7 @@ extension TableView : UITableViewDelegate, UITableViewDataSource{
             self.context.delete(persontoremove)
             do{
                 try self.context.save()
+                print(self.items ?? 0)
             }
             catch{
                 print("Error")
@@ -98,7 +111,8 @@ extension TableView : UITableViewDelegate, UITableViewDataSource{
         return UISwipeActionsConfiguration(actions: [action])
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+        //let tap = UITapGestureRecognizer(target: self, action: #selector(ontap))
+        //tableView.addGestureRecognizer(tap)
         let person = self.items![indexPath.row]
         let alert = UIAlertController(title: "Edit Person", message: "Enter a new name", preferredStyle: .alert)
         alert.addTextField()
@@ -112,15 +126,51 @@ extension TableView : UITableViewDelegate, UITableViewDataSource{
             person.name = textfield.text
             do{
                 try self.context.save()
+                print(self.items ?? 0)
             }
             catch{
                 
             }
             self.fetchdata()
       
-    }
+            }
         alert.addAction(savebutton)
         self.present(alert, animated: true, completion: nil)
+        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText != ""
+        {
+            print("Enter")
+            print(searchText)
+            let predicate = NSPredicate(format: "name contains[cd] %@", searchText)
+            let req: NSFetchRequest = Person.fetchRequest()
+            req.predicate = predicate
+            do{
+                //print("yes")
+                self.items = try context.fetch(req)
+                
+            }
+            catch{
+                print("error")
+                }
+            self.Table.reloadData()
+            
+        }
+        else{
+            self.fetchdata()
+            Table.reloadData()
+        }
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.fetchdata()
+        
+        Table.reloadData()
+    }
+    
 }
-
-}
+/*extension TableView : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchname = items?.filter({$0.prefix})
+    }
+}*/
