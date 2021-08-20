@@ -89,6 +89,14 @@
                                     <segue destination="rD7-j0-9dA" kind="show" id="B1l-Uj-bIq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlf-3g-ioW">
+                                <rect key="frame" x="110" y="531" width="155" height="30"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Json"/>
+                                <connections>
+                                    <segue destination="j9s-IJ-otH" kind="show" id="d2u-72-011"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -99,12 +107,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BNA-Ry-ACc" secondAttribute="bottom" constant="50" id="EuG-I1-BKi"/>
                             <constraint firstItem="D2B-NX-qfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="G3K-1O-NIi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pbn-K5-c8g" secondAttribute="trailing" constant="110" id="HvA-Ec-bmM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mlf-3g-ioW" secondAttribute="trailing" constant="110" id="L61-Tu-G86"/>
                             <constraint firstItem="LiA-Af-bVL" firstAttribute="top" secondItem="v37-gP-x6C" secondAttribute="bottom" constant="30" id="UY5-Gh-b1v"/>
                             <constraint firstItem="hYf-9J-Y7f" firstAttribute="top" secondItem="LiA-Af-bVL" secondAttribute="bottom" constant="40" id="VF9-fk-nSY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pbn-K5-c8g" secondAttribute="bottom" constant="12" id="YeJ-7i-i7i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jch-1r-iH8" secondAttribute="trailing" constant="110" id="dA6-ZX-CHq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LiA-Af-bVL" secondAttribute="trailing" constant="56" id="i1n-Wo-bSt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hYf-9J-Y7f" secondAttribute="trailing" constant="125" id="i4A-z7-Trh"/>
+                            <constraint firstItem="D2B-NX-qfn" firstAttribute="top" secondItem="mlf-3g-ioW" secondAttribute="bottom" constant="8" id="iBN-Bz-v0V"/>
                             <constraint firstItem="BNA-Ry-ACc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="iWU-0Z-pQv"/>
                             <constraint firstItem="hYf-9J-Y7f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="kna-ty-udx"/>
                             <constraint firstItem="Jch-1r-iH8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="lsH-Np-fbe"/>
@@ -117,6 +127,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D2B-NX-qfn" secondAttribute="trailing" constant="110" id="twE-wa-zui"/>
                             <constraint firstItem="Jch-1r-iH8" firstAttribute="top" secondItem="D2B-NX-qfn" secondAttribute="bottom" constant="8" id="wVE-hS-cbV"/>
                             <constraint firstItem="v37-gP-x6C" firstAttribute="top" secondItem="g8H-4k-yfH" secondAttribute="bottom" constant="50" id="wpn-wx-IUo"/>
+                            <constraint firstItem="mlf-3g-ioW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="x2E-hd-CtF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -160,6 +171,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJI-fl-vDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2836" y="-35"/>
+        </scene>
+        <!--Json View Controller-->
+        <scene sceneID="3xt-w5-mdu">
+            <objects>
+                <viewController id="j9s-IJ-otH" customClass="JsonViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXC-pm-AdM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7Tj-hs-ZSX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3AT-KO-3yT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUF-Wd-LBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3755" y="-28"/>
         </scene>
         <!--CalculatorView-->
         <scene sceneID="cZh-AK-yhu">
