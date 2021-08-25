@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<catalog>
+    <emp id="1">
+        <name>Shayantan</name>
+        <pos>Product Team</pos>
+    </emp>
+    <emp id="2">
+        <name>Vaibhav</name>
+        <pos>Product Team</pos>
+    </emp>
+    <emp id="3">
+        <name>Shreeram</name>
+        <pos>Product team</pos>
+    </emp>
+    <emp id="4">
+        <name>Jyoti</name>
+        <pos>Product Team</pos>
+    </emp>
+    <emp id="5">
+        <name>Anuj Nigam</name>
+        <pos>Mentor iOS</pos>
+    </emp>
+    
+</catalog>
+

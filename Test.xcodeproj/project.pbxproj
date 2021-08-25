@@ -22,6 +22,8 @@
 		3466822B26CABA9900C3A4A1 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346681EB26CAAA3400C3A4A1 /* Person+CoreDataClass.swift */; };
 		3466822C26CABA9900C3A4A1 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346681EA26CAAA2F00C3A4A1 /* Person+CoreDataProperties.swift */; };
 		349080D226D5308F00C14968 /* CovidCountryDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349080D126D5308F00C14968 /* CovidCountryDataViewController.swift */; };
+		349080E026D65EB800C14968 /* Employee.xml in Resources */ = {isa = PBXBuildFile; fileRef = 349080DF26D65EB800C14968 /* Employee.xml */; };
+		349080EA26D663E200C14968 /* XMLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349080E926D663E200C14968 /* XMLTableViewController.swift */; };
 		3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */; };
 		34AEF2DF26CF8418002A1D6D /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEF2DE26CF8418002A1D6D /* Covid.swift */; };
 		34AEF2E326CF87F0002A1D6D /* JsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEF2E226CF87F0002A1D6D /* JsonViewController.swift */; };
@@ -74,6 +76,8 @@
 		346681EA26CAAA2F00C3A4A1 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		346681EB26CAAA3400C3A4A1 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		349080D126D5308F00C14968 /* CovidCountryDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidCountryDataViewController.swift; sourceTree = "<group>"; };
+		349080DF26D65EB800C14968 /* Employee.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Employee.xml; sourceTree = "<group>"; };
+		349080E926D663E200C14968 /* XMLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLTableViewController.swift; sourceTree = "<group>"; };
 		3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		34AEF2DE26CF8418002A1D6D /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		34AEF2E226CF87F0002A1D6D /* JsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonViewController.swift; sourceTree = "<group>"; };
@@ -135,8 +139,9 @@
 		3441FCEF26B5911500FF7B06 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				349080D426D61B4700C14968 /* XML */,
+				349080D326D6121100C14968 /* TabViews */,
 				34AEF2DD26CF7F75002A1D6D /* JSON */,
-				346681E926CAAA2000C3A4A1 /* Database */,
 				34C31D6026C254DD00FBA003 /* Collection View */,
 				34C31D5926C1B4E900FBA003 /* TableView */,
 				3471FCF226BC3C2D006FF4CE /* PickerView */,
@@ -146,11 +151,9 @@
 				3441FCF226B5911500FF7B06 /* SceneDelegate.swift */,
 				3441FCF426B5911500FF7B06 /* ViewController.swift */,
 				3441FCF626B5911500FF7B06 /* Main.storyboard */,
-				3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */,
 				3441FCF926B5911600FF7B06 /* Assets.xcassets */,
 				3441FCFB26B5911600FF7B06 /* LaunchScreen.storyboard */,
 				3441FCFE26B5911600FF7B06 /* Info.plist */,
-				3440D2A926BD15C70010FA17 /* ThirdTab.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -173,19 +176,30 @@
 			path = TestUITests;
 			sourceTree = "<group>";
 		};
-		346681E926CAAA2000C3A4A1 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		3471FCF226BC3C2D006FF4CE /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
 				34C31D5626C1094800FBA003 /* PickerView.swift */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		349080D326D6121100C14968 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				3494ED7326B9852300CAE5C6 /* CalculatorVC.swift */,
+				3440D2A926BD15C70010FA17 /* ThirdTab.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		349080D426D61B4700C14968 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				349080DF26D65EB800C14968 /* Employee.xml */,
+				349080E926D663E200C14968 /* XMLTableViewController.swift */,
+			);
+			path = XML;
 			sourceTree = "<group>";
 		};
 		3494ED7026B9327B00CAE5C6 /* NavigationBar */ = {
@@ -334,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349080E026D65EB800C14968 /* Employee.xml in Resources */,
 				34F5A8BD26C2D24E0057C6D0 /* MyCollectionViewCell.xib in Resources */,
 				3441FCFD26B5911600FF7B06 /* LaunchScreen.storyboard in Resources */,
 				3441FCFA26B5911600FF7B06 /* Assets.xcassets in Resources */,
@@ -370,6 +385,7 @@
 				3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */,
 				3441FCF526B5911500FF7B06 /* ViewController.swift in Sources */,
 				345F561F26C40EE000F4CA2D /* HeaderCollectionReusableView.swift in Sources */,
+				349080EA26D663E200C14968 /* XMLTableViewController.swift in Sources */,
 				34192B9226BA74F20033E50F /* Navigation.swift in Sources */,
 				346681E426CA932D00C3A4A1 /* TestDataModel.xcdatamodeld in Sources */,
 				34C31D5E26C1BC7900FBA003 /* CustomCell.swift in Sources */,
