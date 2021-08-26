@@ -69,7 +69,7 @@ class ViewController: UIViewController{
     }
     
     @IBAction func Calculate(_ sender: Any) {
-        let mrp = Double(PriceText.text!)!
+         let mrp = Double(PriceText.text!)!
         let dis = Double(Discount.text!)!
         let finalprice = mrp - (mrp * dis/100.00)
         Final.text = "Rs\(finalprice)"
