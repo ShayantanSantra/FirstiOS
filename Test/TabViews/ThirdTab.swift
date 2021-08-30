@@ -11,6 +11,8 @@ import UIKit
 class ThirdTab: UIViewController {
     @IBOutlet var switch1: UISwitch!
     @IBOutlet var Imageview: UIImageView!
+    @IBOutlet var label: UILabel!
+   // @IBOutlet weak var Button: UIButton!
     let pinchgesture = UIPinchGestureRecognizer()
     let  rotationgesture = UIRotationGestureRecognizer()
     @IBAction func PanAction(_ sender: UIPanGestureRecognizer) {
@@ -36,6 +38,7 @@ class ThirdTab: UIViewController {
         Imageview.addGestureRecognizer(rotationgesture)
         pinchgesture.addTarget(self, action: #selector(pinchaction))
         
+        
         //navigationItem.leftBarButtonItems = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(goback))
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goback))
         // Do any additional setup after loading the view.
@@ -45,9 +48,15 @@ class ThirdTab: UIViewController {
         view.addGestureRecognizer(pinch)
     }*/
         rotationgesture.addTarget(self, action: #selector(Rotation))
+        
     }
     
-   
+    @IBAction func ButtonTapped(_ sender: UIButton) {
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        mainVC.passdata = self
+        present(mainVC,animated: true)
+    }
+    
     @objc private func Rotation() {
         guard let gestureview = rotationgesture.view else{
             return
@@ -95,3 +104,10 @@ class ThirdTab: UIViewController {
 
 }
 
+extension ThirdTab: JustShowDataDelegate{
+    func didEnterData(name: String) {
+        label.text = name
+    }
+    
+    
+}

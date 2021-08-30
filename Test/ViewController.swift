@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol JustShowDataDelegate {
+    func didEnterData(name: String)
+}
 class ViewController: UIViewController{
     @IBOutlet weak var PriceText: UITextField!
     @IBOutlet weak var Discount: UITextField!
@@ -16,6 +19,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var Heading: UILabel!
     @IBOutlet weak var Button2: UIButton!
+    var passdata: JustShowDataDelegate!
     override func viewDidLoad() {
        // view.backgroundColor = .cyan
         super.viewDidLoad()
@@ -66,6 +70,9 @@ class ViewController: UIViewController{
     }
     @objc func longPressHandler(){
         print("Long pressed")
+        print(Final.text ?? 0)
+        passdata.didEnterData(name: Final.text ?? "Nil")
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func Calculate(_ sender: Any) {
@@ -74,6 +81,7 @@ class ViewController: UIViewController{
         let finalprice = mrp - (mrp * dis/100.00)
         Final.text = "Rs\(finalprice)"
         view.endEditing(true)
+        
         
     }
     @IBAction func switchchange(_ sender: UISwitch){
