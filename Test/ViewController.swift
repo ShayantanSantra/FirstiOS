@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 protocol JustShowDataDelegate {
     func didEnterData(name: String)
@@ -27,6 +29,18 @@ class ViewController: UIViewController{
         configuretapgesture()
     }
     
+    @IBAction func avPlayer(_ sender: Any) {
+        guard let url = URL(string: "https://www.youtube.com/embed/yqCJcdFl55I") else {
+            return
+        }
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        present(controller, animated: true){
+            player.play()
+        }
+        
+    }
     private func configuretxtfield(){
         PriceText.delegate = self
         Discount.delegate = self

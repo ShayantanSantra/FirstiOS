@@ -15,9 +15,9 @@ class JsonViewController: UIViewController, UITableViewDelegate, UITableViewData
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet var Searchbar : UISearchBar!
-// var covid = [Covid]()
+    
     var array = [String]()
-    var resp = [Response]()
+    var covid = [Response]()
     //var news = [Articles]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,44 +29,12 @@ class JsonViewController: UIViewController, UITableViewDelegate, UITableViewData
        tableview.dataSource = self
     }
         
-        /*let urlString: String = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0ec583634519425cb1ce277e28e17252"
-       // let urlString: String = "https://jsonplaceholder.typicode.com/posts/1"
-        let url = URL(string: urlString)
-        guard url != nil else {
-            return
-        }
-        let session = URLSession.shared
-        let datatask = session.dataTask(with: url!) { (data, response,error) in
-            if error == nil {
-                let httpresponse = response as! HTTPURLResponse
-                print(httpresponse.statusCode)
-                if(httpresponse.statusCode == 200){
-                    //data parsing
-                    let jsondata = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                   // print(jsondata)
-                   // let result = jsondata as! Dictionary<String, Any>
-                   // print(result["name"]!)
-                    
-                }
-                
-               /* do{
-                   let newsFeed = try decoder.decode(NewsFeed.self, from: data!)
-                    print(newsFeed)
-                    
-                }
-                catch{
-                    print("error")
-                }*/
-               // let jsondata = try? JSONserialisation.jsonObject
-            }
-        }
-        datatask.resume()*/
         // Do any additional setup after loading the view.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("Covid count:\(covid.count)")
        
-        return resp.count
+        return covid.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,9 +43,9 @@ class JsonViewController: UIViewController, UITableViewDelegate, UITableViewData
         //cell.textLabel?.text = news[indexPath.row].title
        // cell.textLabel?.text = Response[indexPath.row].country.capitalized
        // cell.textLabel?.text = Response[indexPath.row].count
-        array.append("\(resp[indexPath.row].country)")
+        array.append("\(covid[indexPath.row].country)")
         print(array)
-        cell.textLabel?.text = "\(resp[indexPath.row].country)"
+        cell.textLabel?.text = "\(covid[indexPath.row].country)"
         //print(indexPath.row)
         //print("\(resp[indexPath.row].country)")
         
@@ -88,7 +56,7 @@ class JsonViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? CovidCountryDataViewController{
-            dest.cov = resp[(tableview.indexPathForSelectedRow?.row)!]
+            dest.cov = covid[(tableview.indexPathForSelectedRow?.row)!]
         }
     }
     func downloadJSON(Completed: @escaping() -> ()){
@@ -98,17 +66,13 @@ class JsonViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let httpresponse = response as! HTTPURLResponse
                 print(httpresponse.statusCode)
                 do {
-                    //let decoder = JSONDecoder()
-                    //let JSONresponse = try decoder.decode([Covid].self, from: data!)
-                    //self.covid = JSONresponse.
-                   // print(JSONresponse.totalResults)
                     let cov_data = try JSONDecoder().decode([Response].self, from: data!)
                     //print(cov_data)
-                    for i in cov_data{
+                    /*for i in cov_data{
                         self.array.append(i.country)                         //print("enter")
                         
-                    }
-                    self.resp = cov_data
+                    }*/
+                    self.covid = cov_data
                     print(self.array)
                     
                     //print(self.resp[20].country)
