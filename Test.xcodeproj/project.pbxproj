@@ -10,6 +10,8 @@
 		3404B53526DFC52200812102 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53426DFC52200812102 /* NewsCollectionViewCell.swift */; };
 		3404B53726DFCACB00812102 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53626DFCACB00812102 /* NewsViewController.swift */; };
 		3404B53926DFCBD900812102 /* News_Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53826DFCBD900812102 /* News_Struct.swift */; };
+		3404B53C26E1F1C200812102 /* MVI_1870.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3404B53B26E1F1C200812102 /* MVI_1870.mp4 */; };
+		3404B53E26E1F2FF00812102 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53D26E1F2FF00812102 /* VideoViewController.swift */; };
 		34192B9226BA74F20033E50F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34192B9126BA74F20033E50F /* Navigation.swift */; };
 		3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D2A926BD15C70010FA17 /* ThirdTab.swift */; };
 		3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FCF026B5911500FF7B06 /* AppDelegate.swift */; };
@@ -61,6 +63,8 @@
 		3404B53426DFC52200812102 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3404B53626DFCACB00812102 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		3404B53826DFCBD900812102 /* News_Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_Struct.swift; sourceTree = "<group>"; };
+		3404B53B26E1F1C200812102 /* MVI_1870.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = MVI_1870.mp4; path = ../../../../Downloads/MVI_1870.mp4; sourceTree = "<group>"; };
+		3404B53D26E1F2FF00812102 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		34192B9126BA74F20033E50F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		3440D2A926BD15C70010FA17 /* ThirdTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTab.swift; sourceTree = "<group>"; };
 		3441FCED26B5911500FF7B06 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,15 @@
 			path = "News App";
 			sourceTree = "<group>";
 		};
+		3404B53A26E1F14800812102 /* Video Group */ = {
+			isa = PBXGroup;
+			children = (
+				3404B53B26E1F1C200812102 /* MVI_1870.mp4 */,
+				3404B53D26E1F2FF00812102 /* VideoViewController.swift */,
+			);
+			path = "Video Group";
+			sourceTree = "<group>";
+		};
 		3441FCE426B5911500FF7B06 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 		3441FCEF26B5911500FF7B06 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3404B53A26E1F14800812102 /* Video Group */,
 				3404B52D26DF561100812102 /* News App */,
 				349080D426D61B4700C14968 /* XML */,
 				349080D326D6121100C14968 /* TabViews */,
@@ -368,6 +382,7 @@
 				349080E026D65EB800C14968 /* Employee.xml in Resources */,
 				34F5A8BD26C2D24E0057C6D0 /* MyCollectionViewCell.xib in Resources */,
 				3441FCFD26B5911600FF7B06 /* LaunchScreen.storyboard in Resources */,
+				3404B53C26E1F1C200812102 /* MVI_1870.mp4 in Resources */,
 				3441FCFA26B5911600FF7B06 /* Assets.xcassets in Resources */,
 				34C31D5F26C1BC7900FBA003 /* CustomCell.xib in Resources */,
 				3441FCF826B5911500FF7B06 /* Main.storyboard in Resources */,
@@ -397,6 +412,7 @@
 			files = (
 				349080D226D5308F00C14968 /* CovidCountryDataViewController.swift in Sources */,
 				3404B53526DFC52200812102 /* NewsCollectionViewCell.swift in Sources */,
+				3404B53E26E1F2FF00812102 /* VideoViewController.swift in Sources */,
 				34F5A8BC26C2D24E0057C6D0 /* MyCollectionViewCell.swift in Sources */,
 				3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */,
 				34AEF2E326CF87F0002A1D6D /* JsonViewController.swift in Sources */,
