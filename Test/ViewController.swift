@@ -30,14 +30,32 @@ class ViewController: UIViewController{
     }
     
     @IBAction func avPlayer(_ sender: Any) {
-        guard let url = URL(string: "https://www.youtube.com/embed/yqCJcdFl55I") else {
-            return
-        }
-        let player = AVPlayer(url: url)
-        let controller = AVPlayerViewController()
+        print("Button pressed")
+      //  guard let url = URL(string: "https://www.youtube.com/embed/yqCJcdFl55I") else {
+          //  return
+        //}
+        var player: AVAudioPlayer?
+        //let player = AVPlayer(url: url)
+        /*let controller = AVPlayerViewController()
         controller.player = player
         present(controller, animated: true){
-            player.play()
+            player.play()*/
+        if let player = player, player.isPlaying {
+            
+        }
+        else{
+            let urlstring = Bundle.main.path(forResource: "Music", ofType: "mp3")
+            do{
+               try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                guard let urlstring = urlstring else{ return}
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlstring))
+                guard let player = player else {return}
+                player.play()
+            }
+            catch{
+                print("error in audio")
+            }
         }
         
     }

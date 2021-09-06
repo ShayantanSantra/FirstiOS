@@ -13,6 +13,7 @@
 		3404B53C26E1F1C200812102 /* MVI_1870.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3404B53B26E1F1C200812102 /* MVI_1870.mp4 */; };
 		3404B53E26E1F2FF00812102 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53D26E1F2FF00812102 /* VideoViewController.swift */; };
 		34192B9226BA74F20033E50F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34192B9126BA74F20033E50F /* Navigation.swift */; };
+		3422C63B26E5F20E00485C53 /* Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3422C63A26E5F20E00485C53 /* Music.mp3 */; };
 		3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D2A926BD15C70010FA17 /* ThirdTab.swift */; };
 		3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FCF026B5911500FF7B06 /* AppDelegate.swift */; };
 		3441FCF326B5911500FF7B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FCF226B5911500FF7B06 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 		3404B53B26E1F1C200812102 /* MVI_1870.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = MVI_1870.mp4; path = ../../../../Downloads/MVI_1870.mp4; sourceTree = "<group>"; };
 		3404B53D26E1F2FF00812102 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		34192B9126BA74F20033E50F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		3422C63A26E5F20E00485C53 /* Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Music.mp3; path = ../../../Downloads/Music.mp3; sourceTree = "<group>"; };
 		3440D2A926BD15C70010FA17 /* ThirdTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTab.swift; sourceTree = "<group>"; };
 		3441FCED26B5911500FF7B06 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3441FCF026B5911500FF7B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				3471FCF226BC3C2D006FF4CE /* PickerView */,
 				3494ED7026B9327B00CAE5C6 /* NavigationBar */,
 				3441FCF026B5911500FF7B06 /* AppDelegate.swift */,
+				3422C63A26E5F20E00485C53 /* Music.mp3 */,
 				346681E226CA932D00C3A4A1 /* TestDataModel.xcdatamodeld */,
 				3441FCF226B5911500FF7B06 /* SceneDelegate.swift */,
 				3441FCF426B5911500FF7B06 /* ViewController.swift */,
@@ -385,6 +388,7 @@
 				3404B53C26E1F1C200812102 /* MVI_1870.mp4 in Resources */,
 				3441FCFA26B5911600FF7B06 /* Assets.xcassets in Resources */,
 				34C31D5F26C1BC7900FBA003 /* CustomCell.xib in Resources */,
+				3422C63B26E5F20E00485C53 /* Music.mp3 in Resources */,
 				3441FCF826B5911500FF7B06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

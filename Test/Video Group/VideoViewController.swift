@@ -14,33 +14,82 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var VideoView: UIView!
     var player: AVPlayer!
     var layer: AVPlayerLayer!
+    //@IBOutlet weak var image: UIImage?
+    @IBOutlet weak var FastForward: UIButton!
+    @IBOutlet weak var Rewind: UIButton!
     @IBOutlet weak var DurationLabel: UILabel!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var CurrentTimeLabel: UILabel!
+    @IBOutlet weak var play_pause_Button: UIButton!
+    @IBOutlet weak var speaker_Button: UIButton!
+    @IBOutlet weak var FullScreen: UIButton!
+    
     var isVideoPlaying = false
+    var HideControls = false
+    var audio = true
     override func viewDidLoad() {
         super.viewDidLoad()
         player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "MVI_1870", ofType: "mp4")!))
         player.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
         timeObserver()
         layer = AVPlayerLayer(player: player)
         layer.frame =  view.bounds
         layer.videoGravity = .resize
         //player.volume = 0
         VideoView.layer.addSublayer(layer)
+        ConfigureTapGesture()
     }
+   // override func viewWillAppear(_ animated: Bool) {
+        //AppDelegate.deviceOrientation = .landscapeLeft
+       // let value = UIInterfaceOrientation.landscapeLeft.rawValue
+       // UIDevice.current.setValue(value, forKey: "orientation")
+    //}
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         layer.frame = VideoView.bounds
     }
-   /* override func viewDidAppear(_ animated: Bool) {
-        /* let vc = AVPlayerViewController()
-        vc.player = player
-        present(vc, animated: true)*/
-        player.play()
-    }*/
-       
+ //Controls Visibility
+    func ConfigureTapGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func tapped(){
+        print("tap is registered")
+        if HideControls == false{
+            HideAll()
+        }
+        else{
+            ShowAll()
+        }
+    }
+    func ShowAll(){
+        HideControls = false
+        timeSlider.isHidden = false
+        DurationLabel.isHidden = false
+        CurrentTimeLabel.isHidden = false
+        play_pause_Button.isHidden = false
+        FastForward.isHidden = false
+        Rewind.isHidden = false
+    }
+    func HideAll(){
+        HideControls = true
+        play_pause_Button.isHidden = true
+        timeSlider.isHidden = true
+        DurationLabel.isHidden = true
+        CurrentTimeLabel.isHidden = true
+        play_pause_Button.isHidden = true
+        FastForward.isHidden = true
+        Rewind.isHidden = true
+    }
+    func HideControlsAfterSeconds(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.HideAll()
+        }
+    }
+
+    //Video control Logic
     @IBAction func Fastforward(_ sender: Any) {
         print("forward button")
         guard let duration = player.currentItem?.duration
@@ -56,18 +105,6 @@ class VideoViewController: UIViewController {
             player.seek(to: time)
         }
     }
-    func timeObserver(){
-        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        let mainQueue = DispatchQueue.main
-        _ = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
-            guard let currentItem = self?.player.currentItem else {return}
-            self?.timeSlider.maximumValue = Float(currentItem.duration.seconds)
-            self?.timeSlider.minimumValue = 0
-            self?.timeSlider.value = Float(currentItem.currentTime().seconds)
-            self?.CurrentTimeLabel.text = self?.getTimestring(from: currentItem.currentTime())
-        })
-    }
-    
     @IBAction func Rewind(_ sender: Any) {
         let currenttime = CMTimeGetSeconds(player.currentTime())
         var newtime = currenttime - 5.0
@@ -78,21 +115,46 @@ class VideoViewController: UIViewController {
         
         let time: CMTime = CMTimeMake(value: Int64(newtime*1000), timescale: 1000)
         player.seek(to: time)
-    
     }
-    
+    func timeObserver(){
+           let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+           let mainQueue = DispatchQueue.main
+           _ = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
+               guard let currentItem = self?.player.currentItem else {return}
+               self?.timeSlider.maximumValue = Float(currentItem.duration.seconds)
+               self?.timeSlider.minimumValue = 0
+               self?.timeSlider.value = Float(currentItem.currentTime().seconds)
+               self?.CurrentTimeLabel.text = self?.getTimestring(from: currentItem.currentTime())
+           })
+       }
     @IBAction func Play(_ sender: UIButton) {
         if isVideoPlaying{
+            
             player.pause()
             isVideoPlaying = false
             print("paused")
-            sender.setTitle("Play", for: .normal)
+            sender.setImage(UIImage(systemName: "play"), for: .normal)
+            //sender.setTitle("Play", for: .normal)
         }
         else{
              print("play")
+            HideControlsAfterSeconds()
             isVideoPlaying = true
             player.play()
-            sender.setTitle("Pause", for: .normal)
+            sender.setImage(UIImage(systemName: "pause"), for: .normal)
+            //sender.setTitle("Pause", for: .normal)
+        }
+    }
+    
+    @IBAction func Speaker(_ sender: UIButton) {
+        if audio == true {
+        player.volume=0
+        speaker_Button.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
+            audio = false}
+        else{
+            audio = true
+            player.volume = 100
+            speaker_Button.setImage(UIImage(systemName: "speaker.fill"), for: .normal)
         }
     }
     
@@ -117,14 +179,35 @@ class VideoViewController: UIViewController {
             return String(format: "%02i:%02i", arguments: [minutes, seconds])
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func orientationChanged() {
+        let orientation = UIApplication.shared.statusBarOrientation
+        switch orientation {
+        case .landscapeLeft:
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                print(orientation)  
+               self.navigationController?.setNavigationBarHidden(true, animated: true)
+               self.tabBarController?.tabBar.isHidden = true
+                self.videoViewPortraitConstraints()
+            }
+        case .landscapeRight:
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+               self.videoViewPortraitConstraints()
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.tabBarController?.tabBar.isHidden = true
+            }
+        case .portrait:
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                self.tabBarController?.tabBar.isHidden = false
+            }
+        default:
+            break
+        }
     }
-    */
-
+    func videoViewPortraitConstraints(){
+        layer.frame = view.bounds
+        //image?.images = #imageLiteral(resourceName: <#T##String#>)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 }
