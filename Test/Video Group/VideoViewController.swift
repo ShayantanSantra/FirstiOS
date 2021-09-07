@@ -50,6 +50,20 @@ class VideoViewController: UIViewController {
         super.viewDidLayoutSubviews()
         layer.frame = VideoView.bounds
     }
+    @IBAction func Rotate(_ sender: UIButton) {
+        let or = UIApplication.shared.statusBarOrientation
+        print(or)
+        switch or{
+        case .landscapeRight:
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        case .portrait:
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        
+        default :
+            break
+        }
+    }
+    
  //Controls Visibility
     func ConfigureTapGesture(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -72,6 +86,8 @@ class VideoViewController: UIViewController {
         play_pause_Button.isHidden = false
         FastForward.isHidden = false
         Rewind.isHidden = false
+        speaker_Button.isHidden = false
+        FullScreen.isHidden = false
     }
     func HideAll(){
         HideControls = true
@@ -82,6 +98,8 @@ class VideoViewController: UIViewController {
         play_pause_Button.isHidden = true
         FastForward.isHidden = true
         Rewind.isHidden = true
+        speaker_Button.isHidden = true
+        FullScreen.isHidden = true
     }
     func HideControlsAfterSeconds(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -106,6 +124,7 @@ class VideoViewController: UIViewController {
         }
     }
     @IBAction func Rewind(_ sender: Any) {
+        
         let currenttime = CMTimeGetSeconds(player.currentTime())
         var newtime = currenttime - 5.0
         if(newtime < 5)
@@ -128,6 +147,18 @@ class VideoViewController: UIViewController {
            })
        }
     @IBAction func Play(_ sender: UIButton) {
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+
+        UIView.animate(withDuration: 2.0,
+                                   delay: 0,
+                                   usingSpringWithDamping: CGFloat(0.20),
+                                   initialSpringVelocity: CGFloat(6.0),
+                                   options: UIView.AnimationOptions.allowUserInteraction,
+                                   animations: {
+                                    sender.transform = CGAffineTransform.identity
+            },
+                                   completion: { Void in()  }
+        )
         if isVideoPlaying{
             
             player.pause()
@@ -148,13 +179,13 @@ class VideoViewController: UIViewController {
     
     @IBAction func Speaker(_ sender: UIButton) {
         if audio == true {
-        player.volume=0
+            player.volume = 0
         speaker_Button.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
             audio = false}
         else{
             audio = true
-            player.volume = 100
-            speaker_Button.setImage(UIImage(systemName: "speaker.fill"), for: .normal)
+            player.volume = 1
+            speaker_Button.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
         }
     }
     

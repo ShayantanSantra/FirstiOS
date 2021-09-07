@@ -250,13 +250,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYy-S6-3wG">
-                                <rect key="frame" x="284" y="698" width="46" height="21"/>
+                                <rect key="frame" x="272.66666666666669" y="698" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHn-fg-ruV">
-                                <rect key="frame" x="60" y="689" width="216" height="31"/>
+                                <rect key="frame" x="59.999999999999986" y="689" width="204.66666666666663" height="31"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="SliderValueChanged:" destination="Skf-bt-n1O" eventType="valueChanged" id="yba-CV-a8o"/>
@@ -284,7 +284,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
                                 <connections>
-                                    <action selector="Fastforward:" destination="Skf-bt-n1O" eventType="touchUpInside" id="zhE-58-BFf"/>
+                                    <action selector="Fastforward:" destination="Skf-bt-n1O" eventType="touchUpInside" id="v2R-vS-QWt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-Oe-szz">
@@ -294,13 +294,13 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
                                 <connections>
-                                    <action selector="Rewind:" destination="Skf-bt-n1O" eventType="touchUpInside" id="WN5-0W-GF0"/>
+                                    <action selector="Rewind:" destination="Skf-bt-n1O" eventType="touchUpInside" id="vMe-my-dCn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-Ar-rIE">
-                                <rect key="frame" x="340" y="694" width="25" height="25"/>
+                                <rect key="frame" x="328.66666666666669" y="693" width="36.333333333333314" height="26"/>
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="speaker.fill" catalog="system">
+                                <state key="normal" image="speaker.3.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23"/>
@@ -310,11 +310,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX5-CG-umH">
-                                <rect key="frame" x="336.66666666666669" y="98" width="28.333333333333314" height="27.333333333333329"/>
+                                <rect key="frame" x="334.33333333333331" y="98" width="30.666666666666686" height="31.666666666666657"/>
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="plus.magnifyingglass" catalog="system">
+                                <state key="normal" image="rotate.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="Rotate:" destination="Skf-bt-n1O" eventType="touchUpInside" id="Vxw-qh-4vX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -1246,7 +1249,7 @@
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
-        <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="speaker.fill" catalog="system" width="128" height="121"/>
+        <image name="rotate.left" catalog="system" width="128" height="128"/>
+        <image name="speaker.3.fill" catalog="system" width="128" height="90"/>
     </resources>
 </document>
