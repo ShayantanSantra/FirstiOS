@@ -110,7 +110,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="0wh-ff-Eda"/>
                                 </constraints>
-                                <state key="normal" image="Enter Button">
+                                <state key="normal" image="magnifyingglass" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -199,6 +199,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Audio" destination="Nh2-KO-iIh" id="Jgp-li-J6J"/>
                         <outlet property="Button" destination="hYf-9J-Y7f" id="cVZ-92-WgM"/>
                         <outlet property="Button2" destination="BNA-Ry-ACc" id="3Op-IN-6JY"/>
                         <outlet property="Discount" destination="LiA-Af-bVL" id="eVk-9e-goN"/>
@@ -236,6 +237,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaa-RZ-63W">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keX-jn-bYo">
                                 <rect key="frame" x="0.0" y="300.66666666666669" width="375" height="210.66666666666669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -323,6 +328,7 @@
                         <constraints>
                             <constraint firstItem="tYy-S6-3wG" firstAttribute="leading" secondItem="xHn-fg-ruV" secondAttribute="trailing" constant="10" id="2km-E6-yWV"/>
                             <constraint firstItem="tWn-Ar-rIE" firstAttribute="leading" secondItem="tYy-S6-3wG" secondAttribute="trailing" constant="10" id="3gg-5B-H72"/>
+                            <constraint firstItem="qaa-RZ-63W" firstAttribute="top" secondItem="3Fy-NL-WgZ" secondAttribute="top" id="KCR-fp-bkh"/>
                             <constraint firstItem="xIk-o0-Etq" firstAttribute="centerX" secondItem="ebe-9t-lf3" secondAttribute="centerX" id="NMY-Dk-AMo"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="trailing" secondItem="tWn-Ar-rIE" secondAttribute="trailing" constant="10" id="PGG-xF-ESN"/>
                             <constraint firstItem="keX-jn-bYo" firstAttribute="centerX" secondItem="ebe-9t-lf3" secondAttribute="centerX" id="QK6-aJ-IMS"/>
@@ -330,29 +336,39 @@
                             <constraint firstItem="keX-jn-bYo" firstAttribute="leading" secondItem="3Fy-NL-WgZ" secondAttribute="leading" id="W9Q-Ex-X5h"/>
                             <constraint firstItem="keX-jn-bYo" firstAttribute="centerY" secondItem="ebe-9t-lf3" secondAttribute="centerY" id="YDf-Fv-oZS"/>
                             <constraint firstItem="xIk-o0-Etq" firstAttribute="centerY" secondItem="ebe-9t-lf3" secondAttribute="centerY" id="ay1-lK-QCh"/>
+                            <constraint firstItem="3Fy-NL-WgZ" firstAttribute="trailing" secondItem="qaa-RZ-63W" secondAttribute="trailing" id="bnZ-pD-0c0"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="trailing" secondItem="zId-9W-hgU" secondAttribute="trailing" constant="40" id="dP3-cn-mSI"/>
                             <constraint firstItem="xHn-fg-ruV" firstAttribute="leading" secondItem="O30-RB-yty" secondAttribute="trailing" constant="10" id="eeb-9S-LfR"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="trailing" secondItem="SX5-CG-umH" secondAttribute="trailing" constant="10" id="fgy-uL-kx8"/>
                             <constraint firstItem="keX-jn-bYo" firstAttribute="trailing" secondItem="3Fy-NL-WgZ" secondAttribute="trailing" id="hAv-MG-vo2"/>
                             <constraint firstItem="wZE-Oe-szz" firstAttribute="centerY" secondItem="ebe-9t-lf3" secondAttribute="centerY" id="iNp-qq-AYo"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="bottom" secondItem="tYy-S6-3wG" secondAttribute="bottom" constant="10" id="kLs-hi-6oy"/>
+                            <constraint firstItem="qaa-RZ-63W" firstAttribute="leading" secondItem="3Fy-NL-WgZ" secondAttribute="leading" id="lJ4-T9-445"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="bottom" secondItem="O30-RB-yty" secondAttribute="bottom" constant="10" id="o0G-qP-3Qn"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="bottom" secondItem="xHn-fg-ruV" secondAttribute="bottom" constant="10" id="qaM-gg-hyX"/>
                             <constraint firstItem="SX5-CG-umH" firstAttribute="top" secondItem="3Fy-NL-WgZ" secondAttribute="top" constant="10" id="rU0-po-xve"/>
                             <constraint firstItem="wZE-Oe-szz" firstAttribute="leading" secondItem="3Fy-NL-WgZ" secondAttribute="leading" constant="40" id="sFH-Wr-QPm"/>
                             <constraint firstItem="3Fy-NL-WgZ" firstAttribute="bottom" secondItem="tWn-Ar-rIE" secondAttribute="bottom" constant="10" id="sJ1-Uu-Boj"/>
+                            <constraint firstAttribute="bottom" secondItem="qaa-RZ-63W" secondAttribute="bottom" id="wAt-05-0pP"/>
                             <constraint firstItem="zId-9W-hgU" firstAttribute="centerY" secondItem="ebe-9t-lf3" secondAttribute="centerY" id="wRd-ne-ZWT"/>
                             <constraint firstItem="O30-RB-yty" firstAttribute="leading" secondItem="3Fy-NL-WgZ" secondAttribute="leading" constant="6" id="wcT-LP-JBQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Fy-NL-WgZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Video Player" id="jzO-Kh-Ne4"/>
+                    <navigationItem key="navigationItem" title="Video Player" id="jzO-Kh-Ne4">
+                        <barButtonItem key="rightBarButtonItem" title="Live" id="ybx-vs-RyH">
+                            <connections>
+                                <segue destination="I1W-CY-D7H" kind="show" id="uSX-Db-D73"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CurrentTimeLabel" destination="O30-RB-yty" id="3ki-g0-Mrh"/>
                         <outlet property="DurationLabel" destination="tYy-S6-3wG" id="sja-f5-GKx"/>
                         <outlet property="FastForward" destination="zId-9W-hgU" id="yye-QC-xko"/>
                         <outlet property="FullScreen" destination="SX5-CG-umH" id="qgF-KR-qL8"/>
                         <outlet property="Rewind" destination="wZE-Oe-szz" id="wz4-SP-RDl"/>
+                        <outlet property="Touch" destination="qaa-RZ-63W" id="6ei-jC-mZg"/>
                         <outlet property="VideoView" destination="keX-jn-bYo" id="S8g-AC-Hcz"/>
                         <outlet property="play_pause_Button" destination="xIk-o0-Etq" id="oun-yv-Aam"/>
                         <outlet property="speaker_Button" destination="tWn-Ar-rIE" id="oH3-zX-EXP"/>
@@ -362,6 +378,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9B-Kx-5Jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4448.8000000000002" y="-18.472906403940886"/>
+        </scene>
+        <!--Live Video View Controller-->
+        <scene sceneID="k5Q-L1-yS8">
+            <objects>
+                <viewController id="I1W-CY-D7H" customClass="LiveVideoViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8EY-LT-v0z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ4-Jv-7Zg">
+                                <rect key="frame" x="164" y="391" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playvideo:" destination="I1W-CY-D7H" eventType="touchUpInside" id="fXi-38-bXv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kgE-dW-evP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gwh-aw-kGf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BRr-9P-pdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5183" y="-18"/>
         </scene>
         <!--Json Push View Controller-->
         <scene sceneID="FtH-VH-0dW">
@@ -1239,13 +1281,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Enter Button" width="512" height="512"/>
         <image name="Random_image" width="1200" height="1200"/>
         <image name="backward.fill" catalog="system" width="128" height="79"/>
         <image name="circle.grid.3x3" catalog="system" width="128" height="110"/>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="delete.right.fill" catalog="system" width="128" height="104"/>
         <image name="forward.fill" catalog="system" width="128" height="79"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>

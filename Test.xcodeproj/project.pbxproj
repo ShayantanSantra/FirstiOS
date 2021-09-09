@@ -14,6 +14,7 @@
 		3404B53E26E1F2FF00812102 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404B53D26E1F2FF00812102 /* VideoViewController.swift */; };
 		34192B9226BA74F20033E50F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34192B9126BA74F20033E50F /* Navigation.swift */; };
 		3422C63B26E5F20E00485C53 /* Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3422C63A26E5F20E00485C53 /* Music.mp3 */; };
+		3422C63D26E88E4B00485C53 /* LiveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3422C63C26E88E4B00485C53 /* LiveVideoViewController.swift */; };
 		3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D2A926BD15C70010FA17 /* ThirdTab.swift */; };
 		3441FCF126B5911500FF7B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FCF026B5911500FF7B06 /* AppDelegate.swift */; };
 		3441FCF326B5911500FF7B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441FCF226B5911500FF7B06 /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 		3404B53D26E1F2FF00812102 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		34192B9126BA74F20033E50F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		3422C63A26E5F20E00485C53 /* Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Music.mp3; path = ../../../Downloads/Music.mp3; sourceTree = "<group>"; };
+		3422C63C26E88E4B00485C53 /* LiveVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideoViewController.swift; sourceTree = "<group>"; };
 		3440D2A926BD15C70010FA17 /* ThirdTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTab.swift; sourceTree = "<group>"; };
 		3441FCED26B5911500FF7B06 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3441FCF026B5911500FF7B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				3404B53B26E1F1C200812102 /* MVI_1870.mp4 */,
 				3404B53D26E1F2FF00812102 /* VideoViewController.swift */,
+				3422C63C26E88E4B00485C53 /* LiveVideoViewController.swift */,
 			);
 			path = "Video Group";
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				3404B53E26E1F2FF00812102 /* VideoViewController.swift in Sources */,
 				34F5A8BC26C2D24E0057C6D0 /* MyCollectionViewCell.swift in Sources */,
 				3494ED7426B9852300CAE5C6 /* CalculatorVC.swift in Sources */,
+				3422C63D26E88E4B00485C53 /* LiveVideoViewController.swift in Sources */,
 				34AEF2E326CF87F0002A1D6D /* JsonViewController.swift in Sources */,
 				3440D2AA26BD15C70010FA17 /* ThirdTab.swift in Sources */,
 				3441FCF526B5911500FF7B06 /* ViewController.swift in Sources */,

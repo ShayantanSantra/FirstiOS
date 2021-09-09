@@ -21,7 +21,9 @@ class ViewController: UIViewController{
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var Heading: UILabel!
     @IBOutlet weak var Button2: UIButton!
+    @IBOutlet weak var Audio: UIButton!
     var passdata: JustShowDataDelegate!
+    var player: AVAudioPlayer?
     override func viewDidLoad() {
        // view.backgroundColor = .cyan
         super.viewDidLoad()
@@ -34,16 +36,19 @@ class ViewController: UIViewController{
       //  guard let url = URL(string: "https://www.youtube.com/embed/yqCJcdFl55I") else {
           //  return
         //}
-        var player: AVAudioPlayer?
+        
         //let player = AVPlayer(url: url)
         /*let controller = AVPlayerViewController()
         controller.player = player
         present(controller, animated: true){
             player.play()*/
         if let player = player, player.isPlaying {
-            
+            player.stop()
+            Audio.setTitle("play", for: .normal)
         }
         else{
+            Audio.setTitle("Stop", for: .normal)
+            print("Entering else loop")
             let urlstring = Bundle.main.path(forResource: "Music", ofType: "mp3")
             do{
                try AVAudioSession.sharedInstance().setMode(.default)

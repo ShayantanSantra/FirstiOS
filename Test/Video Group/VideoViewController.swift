@@ -23,6 +23,7 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var play_pause_Button: UIButton!
     @IBOutlet weak var speaker_Button: UIButton!
     @IBOutlet weak var FullScreen: UIButton!
+    @IBOutlet weak var Touch: UIView!
     
     var isVideoPlaying = false
     var HideControls = false
@@ -67,6 +68,7 @@ class VideoViewController: UIViewController {
  //Controls Visibility
     func ConfigureTapGesture(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        Touch.addGestureRecognizer(tap)
         view.addGestureRecognizer(tap)
     }
     @objc func tapped(){
